@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador Inteligente Línea M-10</title>
+    
+    <link rel="manifest" href="/manifest.json">
+    
+    <link rel="stylesheet" href="../CSS/Estilos.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h2>Buscador de Autobús (Línea M-10)</h2>
+        <p class="subtitulo">Viaja entre Cádiz y San Fernando en tiempo real.</p>
+        
+        <div class="campo">
+            <label for="origen">¿Dónde te subes?</label>
+            <select id="origen" onchange="actualizarDestinosOpciones()">
+                <option value="pzEspana" data-ciudad="cadiz">Cádiz - Plaza España</option>
+                <option value="pzSevilla" data-ciudad="cadiz">Cádiz - Plaza de Sevilla</option>
+                <option value="asdrubal" data-ciudad="cadiz">Cádiz - Plaza Asdrúbal</option>
+                <option value="hospitalCadiz" data-ciudad="cadiz">Cádiz - Hospital Puerta del Mar</option>
+                <option value="estadio" data-ciudad="cadiz">Cádiz - Telegrafía / Estadio</option>
+                <option value="stoEntierro" data-ciudad="sanfernando">San Fernando - Ponce de León / Sto. Entierro</option>
+                <option value="leonHerrero" data-ciudad="sanfernando">San Fernando - León Herrero</option>
+                <option value="hospitalSanCarlos" data-ciudad="sanfernando">San Fernando - Hospital San Carlos</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="destino">¿Dónde te bajas?</label>
+            <select id="destino">
+                <option value="stoEntierro" data-ciudad="sanfernando">San Fernando - Ponce de León / Sto. Entierro</option>
+                <option value="leonHerrero" data-ciudad="sanfernando">San Fernando - León Herrero</option>
+                <option value="hospitalSanCarlos" data-ciudad="sanfernando">San Fernando - Hospital San Carlos</option>
+                <option value="pzEspana" data-ciudad="cadiz">Cádiz - Plaza España</option>
+                <option value="pzSevilla" data-ciudad="cadiz">Cádiz - Plaza de Sevilla</option>
+                <option value="asdrubal" data-ciudad="cadiz">Cádiz - Plaza Asdrúbal</option>
+                <option value="hospitalCadiz" data-ciudad="cadiz">Cádiz - Hospital Puerta del Mar</option>
+                <option value="estadio" data-ciudad="cadiz">Cádiz - Telegrafía / Estadio</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="horaLlegada">¿A qué hora quieres llegar? (Formato 24h)</label>
+            <input 
+                type="text" 
+                id="horaLlegada" 
+                class="input-hora" 
+                placeholder="15:00" 
+                maxlength="5" 
+                inputmode="numeric"
+                oninput="aplicarMascaraHora(this)"
+            >
+        </div>
+
+        <button onclick="buscarAutobusReal()">Calcular autobús óptimo</button>
+
+        <div id="resultado" style="display:none;"></div>
+    </div>
+    
+    <script src="../JS/Calculos.js?v=2"></script>
+</body>
+</html>
