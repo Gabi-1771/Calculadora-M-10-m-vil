@@ -1,0 +1,17 @@
+{
+    "short_name": "Bus M-10",
+    "name": "Buscador de Autobuses Línea M-10",
+    "icons": [
+        {
+            "src": "icono.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/HTML/index.html",
+    "background_color": "#f3f4f6",
+    "display": "standalone",
+    "theme_color": "#2563eb",
+    "orientation": "portrait-primary"
+}
