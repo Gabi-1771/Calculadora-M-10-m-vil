@@ -67,7 +67,7 @@ function buscarAutobusReal() {
 
     const minutesDeseados = convertirAMinutos(horaDeseadaTexto);
 
-    fetch('/api/horarios')
+    fetch('https://backend-calculadora-m-10-movil.onrender.com/api/horarios')
         .then(response => response.json())
         .then(datos => {
             const listaAutobuses = datos.ida; 
